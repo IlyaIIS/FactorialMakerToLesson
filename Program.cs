@@ -5,7 +5,7 @@ namespace NewNamespace
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
             Console.Write("Введите число факториала: ");
             double factorial = FindFactorial(GetIntToFactorial());
@@ -127,7 +127,12 @@ namespace NewNamespace
 
                 SignColorShift();
                 Thread.Sleep(sleep);
-            } while (true);
+            } while (Console.KeyAvailable == false);
+
+            Console.ReadKey();
+            Console.ResetColor();
+            Console.Clear();
+            Main();
         }
 
         static void WriteColor(string text)   //Выводит текст с заданным цветом цветом
